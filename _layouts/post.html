@@ -1,0 +1,44 @@
+---
+layout: default
+---
+<article class="post">
+  <header> 
+    <div class="title">
+      <h2>{{ page.title | escape }}</h2>
+      <p><a href="https://github.com/tuuuuuuuna/tuuuuuuuna.github.io/edit/main/{{ page.path }}" class="icon"><i class="fas fa-fw fa-edit"></i> 깃헙을 편집하다</a></p>
+    </div>
+    <div class="meta">
+      <time class="published" datetime="{{ page.date }}">{{ page.date | date: "%d %b %Y %R" }}</time>
+<!--       <a href="{{ site.author.cv }}" class="author"><span class="name"> Dong Won.{{ site.author.last_name }}</span><img src="{{ site.author.avatar | prepend: site.baseurl }}" alt="ViKapitoshka" /></a> -->
+      <a href="{{ site.author.cv }}" class="author"><span class="name"> Dong Won.{{ site.author.last_name }}</span><img src="{{ site.author.avatar | prepend: site.baseurl }}" alt="" /></a>
+    </div>
+  </header>
+  {{ content }}
+  
+  <p>오늘도 화이팅 :~)
+  <footer>
+    <ul class="stats">
+      <li><a class="icon" href="{{ site.url }}"><i class="fas fa-fw fa-folder"></i> 폴더로 돌아가기</a></li>
+<!--       수정을 위한 url 집어넣어 놓기 -->
+      <li><a href="https://github.com/tuuuuuuuna/tuuuuuuuna.github.io/edit/main/{{ page.path }}" class="icon"><i class="fas fa-fw fa-edit"></i> Edit</a></li>
+      
+<!--       <li><a href="//github.com/ViKapitoshka/blog/edit/master/{{ page.path }}" class="icon"><i class="fas fa-fw fa-edit"></i> Edit</a></li> -->
+<!--       수정을 위한 url 집어넣어 놓기 -->
+    </ul>
+  </footer>
+  
+</div>
+</article>
+<ul class="actions pagination">
+  {% if page.previous.url %}
+    <li><a href="{{page.previous.url}}" class="button big previous icon"><i class="fw fas fa-chevron-left"></i> 이전으로</a></li>
+  {% endif %}
+  {% if page.next.url %}
+    <li><a href="{{page.next.url}}" class="button big next icon">다음으로 <i class="fw fas fa-chevron-right"></i></a></li>
+  {% endif %}
+</ul>
+
+
+{%include comments.html %}
+
+

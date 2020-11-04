@@ -1,0 +1,9 @@
+# blog page sections
+- name: 프로젝트
+  href: '/category1/'
+
+- name: 알고리즘
+  href: '/category2/'
+
+- name: 공부
+  href: '/category3/'

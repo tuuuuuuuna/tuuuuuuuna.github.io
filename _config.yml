@@ -1,0 +1,25 @@
+title: 동원이의 개발 블로그
+description: > # this means to ignore newlines until "baseurl:"
+  Blog with theme Future Imperfect<br>
+baseurl: "" # the subpath of your site, e.g. /blog
+# url: "https://future-imperfect.kaptn.ru" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://tuuuuuuuna.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+
+
+author:
+  name: 'Dong Won'
+  last_name: 'Sohn'
+#   cv: '//kaptn.ru'
+  avatar: '/images/avatar.jpeg'
+  github_username:  tuuuuuuuuna
+  email: tuuuuuuuna@naver.com
+#   vk_id: id201664979
+#   telegram_name: vikapitoshka 
+  logo: '/images/logo.svg'
+
+# Build settings
+markdown: kramdown
+
+permalink: /:categories/:year/:title.html
+
+
