@@ -3,7 +3,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Blog with theme Future Imperfect<br>
 baseurl: "" # the subpath of your site, e.g. /blog
 # url: "https://future-imperfect.kaptn.ru" # the base hostname & protocol for your site, e.g. http://example.com
-url: "https://tuuuuuuuna.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://tuuuuuuuna.ml/" # the base hostname & protocol for your site, e.g. http://example.com
 
 
 author:
