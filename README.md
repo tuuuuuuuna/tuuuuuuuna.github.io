@@ -2,6 +2,11 @@
 
 모바일 최적화된 웹 청첩장 사이트입니다.
 
+## 접속 URL
+
+- **메인 URL**: https://tuuuuuuuna.github.io
+- **단축 URL**: http://bit.ly/4tW7wgb
+
 ## 프로젝트 구조
 
 ```
