@@ -1,0 +1,1020 @@
+/* ===================================
+   CSS Reset / Normalize (최소)
+   =================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity; /* iOS Safari 대응: mandatory 금지 */
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, a {
+  cursor: pointer;
+}
+
+address {
+  font-style: normal;
+}
+
+/* ===================================
+   CSS Custom Properties
+   =================================== */
+:root {
+  /* 색상 팔레트 - 따뜻하고 미니멀한 중성 톤 */
+  --color-white: #FFFFFF;
+  --color-bg: #FAFAF8;
+  --color-bg-alt: #F5F5F3;
+  --color-text: #2C2C2C;
+  --color-text-light: #707070;
+  --color-accent: #B8956A; /* 따뜻한 골드 */
+  --color-accent-dark: #9A7A54;
+  --color-border: #E8E8E6;
+
+  /* 타이포그래피 */
+  --font-serif: 'Noto Serif KR', Georgia, serif;
+  --font-sans: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* 폰트 크기 */
+  --font-size-hero: 2rem;       /* 32px */
+  --font-size-h1: 1.75rem;      /* 28px */
+  --font-size-h2: 1.5rem;       /* 24px */
+  --font-size-h3: 1.125rem;     /* 18px */
+  --font-size-base: 1rem;       /* 16px */
+  --font-size-small: 0.875rem;  /* 14px */
+
+  /* 간격 (8px 기본 단위) */
+  --spacing-xs: 0.5rem;   /* 8px */
+  --spacing-sm: 1rem;     /* 16px */
+  --spacing-md: 1.5rem;   /* 24px */
+  --spacing-lg: 2rem;     /* 32px */
+  --spacing-xl: 3rem;     /* 48px */
+  --spacing-2xl: 4rem;    /* 64px */
+
+  /* 최소 터치 타겟 (Apple HIG) */
+  --min-touch-target: 44px;
+
+  /* 레이아웃 */
+  --max-content-width: 480px;
+  --border-radius: 12px;
+  --border-radius-sm: 8px;
+
+  /* 트랜지션 */
+  --transition-fast: 0.2s ease;
+  --transition-smooth: 0.3s ease;
+}
+
+/* ===================================
+   기본 타이포그래피
+   =================================== */
+body {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  font-weight: 500;
+  font-family: var(--font-serif);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+}
+
+p {
+  line-height: 1.75;
+}
+
+/* ===================================
+   레이아웃
+   =================================== */
+main {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.section {
+  min-height: 100dvh; /* iOS Safari 대응 - 동적 뷰포트 높이 */
+  padding: var(--spacing-xl) var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  scroll-snap-align: start; /* 부드러운 스냅 */
+}
+
+.section-title {
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+/* ===================================
+   히어로 섹션
+   =================================== */
+#hero {
+  background-color: var(--color-white);
+  position: relative;
+}
+
+.hero-content {
+  max-width: var(--max-content-width);
+  width: 100%;
+}
+
+.hero-title {
+  font-size: var(--font-size-hero);
+  font-weight: 400;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  align-items: center;
+}
+
+.groom-name,
+.bride-name {
+  font-weight: 500;
+}
+
+.ampersand {
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  font-weight: 300;
+  margin: var(--spacing-xs) 0;
+}
+
+.hero-date {
+  font-size: var(--font-size-h3);
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-lg);
+  font-family: var(--font-serif);
+  font-weight: 300;
+}
+
+.hero-message {
+  font-size: var(--font-size-base);
+  color: var(--color-text-light);
+  line-height: 1.8;
+  margin-top: var(--spacing-lg);
+}
+
+/* ===================================
+   신랑/신부 소개 섹션
+   =================================== */
+#couple {
+  background-color: var(--color-white);
+}
+
+.couple-container {
+  width: 100%;
+  max-width: var(--max-content-width);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.couple-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.couple-photo-wrapper {
+  width: 160px;
+  height: 160px;
+}
+
+.couple-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-bg-alt) 0%, var(--color-border) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* 사진 placeholder 스타일 - 실제 이미지 추가 시 background-image로 대체 */
+.couple-photo::before {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  background-color: var(--color-white);
+  border-radius: 50%;
+  opacity: 0.3;
+}
+
+.couple-info {
+  text-align: center;
+}
+
+.couple-role {
+  font-size: var(--font-size-small);
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--spacing-xs);
+  font-weight: 500;
+}
+
+.couple-name {
+  font-size: var(--font-size-h2);
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-sm);
+  font-family: var(--font-serif);
+}
+
+.couple-parents {
+  font-size: var(--font-size-small);
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+.parent-label {
+  font-size: 0.8125rem;
+  color: var(--color-text-light);
+  opacity: 0.8;
+}
+
+.parent-separator {
+  margin: 0 var(--spacing-xs);
+  color: var(--color-border);
+}
+
+/* 인사말 */
+.couple-message {
+  max-width: 400px;
+  width: 100%;
+  padding: var(--spacing-lg);
+  background-color: var(--color-bg-alt);
+  border-radius: var(--border-radius);
+  margin-top: var(--spacing-md);
+}
+
+.couple-message p {
+  font-size: var(--font-size-base);
+  color: var(--color-text-light);
+  line-height: 1.9;
+  font-family: var(--font-serif);
+  font-weight: 300;
+}
+
+/* ===================================
+   사진 갤러리 섹션
+   =================================== */
+#gallery {
+  background-color: var(--color-bg);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-sm);
+  width: 100%;
+  max-width: var(--max-content-width);
+  margin-bottom: var(--spacing-md);
+}
+
+.gallery-item {
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* 1:1 비율 */
+  background: none;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: var(--border-radius-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.gallery-item:hover,
+.gallery-item:focus {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.gallery-item:active {
+  transform: scale(0.98);
+}
+
+/* Placeholder 스타일 */
+.gallery-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--color-bg-alt) 0%, var(--color-border) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-placeholder-text {
+  font-size: var(--font-size-small);
+  color: var(--color-text-light);
+  opacity: 0.5;
+}
+
+.gallery-note {
+  font-size: var(--font-size-small);
+  color: var(--color-text-light);
+  margin-top: var(--spacing-sm);
+  font-style: italic;
+}
+
+/* ===================================
+   라이트박스
+   =================================== */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  height: 100dvh; /* iOS Safari 대응 */
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md);
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox-image-wrapper {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: var(--spacing-md);
+}
+
+.lightbox-placeholder {
+  width: 100%;
+  padding-top: 75%; /* 4:3 비율 */
+  position: relative;
+  background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-placeholder-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: var(--font-size-h3);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* 라이트박스 컨트롤 */
+.lightbox-close {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  width: var(--min-touch-target);
+  height: var(--min-touch-target);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-fast);
+  z-index: 10001;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--min-touch-target);
+  height: var(--min-touch-target);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-fast);
+  z-index: 10001;
+}
+
+.lightbox-prev {
+  left: var(--spacing-md);
+}
+
+.lightbox-next {
+  right: var(--spacing-md);
+}
+
+.lightbox-nav:hover,
+.lightbox-nav:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+.lightbox-nav:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.lightbox-counter {
+  color: white;
+  font-size: var(--font-size-base);
+  text-align: center;
+  margin-top: var(--spacing-sm);
+}
+
+/* ===================================
+   교통 안내 섹션
+   =================================== */
+#transport {
+  background-color: var(--color-white);
+}
+
+.transport-container {
+  width: 100%;
+  max-width: var(--max-content-width);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.transport-card {
+  background-color: var(--color-bg-alt);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  text-align: center;
+}
+
+.transport-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1;
+}
+
+.transport-title {
+  font-size: var(--font-size-h3);
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-sm);
+  font-family: var(--font-sans);
+}
+
+.transport-content {
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.transport-content p {
+  margin-bottom: var(--spacing-xs);
+}
+
+.transport-content p:last-child {
+  margin-bottom: 0;
+}
+
+.transport-detail {
+  font-size: var(--font-size-small);
+  color: var(--color-text-light);
+  margin-top: var(--spacing-xs);
+}
+
+/* ===================================
+   축의금 계좌 섹션
+   =================================== */
+#account {
+  background-color: var(--color-bg);
+}
+
+.account-container {
+  width: 100%;
+  max-width: var(--max-content-width);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.account-card {
+  background-color: var(--color-white);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.account-side {
+  font-size: var(--font-size-h3);
+  font-weight: 500;
+  color: var(--color-accent);
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  font-family: var(--font-serif);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.account-item {
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid var(--color-bg-alt);
+}
+
+.account-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.account-owner {
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-xs);
+}
+
+.account-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-base);
+  color: var(--color-text-light);
+}
+
+.account-bank {
+  font-size: var(--font-size-small);
+  color: var(--color-text-light);
+}
+
+.account-number {
+  font-family: 'Courier New', monospace;
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  letter-spacing: 0.5px;
+}
+
+/* 복사 버튼 */
+.copy-button {
+  width: 100%;
+  min-height: var(--min-touch-target);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--color-bg-alt);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-small);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.copy-button:hover,
+.copy-button:focus {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  border-color: var(--color-accent);
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.copy-button:active {
+  transform: scale(0.98);
+}
+
+.copy-button.copied {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  border-color: var(--color-accent);
+}
+
+/* 복사 성공 토스트 */
+.copy-toast {
+  position: fixed;
+  bottom: var(--spacing-lg);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-small);
+  z-index: 10000;
+  animation: fadeInOut 2s ease;
+}
+
+.copy-toast[hidden] {
+  display: none;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+  }
+  10%, 90% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+  }
+}
+
+/* ===================================
+   예식 정보 섹션
+   =================================== */
+#ceremony {
+  background-color: var(--color-bg-alt);
+}
+
+.ceremony-info {
+  width: 100%;
+  max-width: var(--max-content-width);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.ceremony-date,
+.ceremony-venue {
+  background-color: var(--color-white);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.info-label {
+  font-size: var(--font-size-small);
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--spacing-sm);
+  font-family: var(--font-sans);
+  font-weight: 500;
+}
+
+/* 날짜/시간 */
+.ceremony-date time {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.date-text {
+  font-size: var(--font-size-h2);
+  font-weight: 500;
+  color: var(--color-text);
+  font-family: var(--font-serif);
+}
+
+.time-text {
+  font-size: var(--font-size-h3);
+  color: var(--color-accent);
+  font-weight: 400;
+  margin-top: var(--spacing-xs);
+}
+
+/* 예식장 정보 */
+.venue-name {
+  font-size: var(--font-size-h2);
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-text);
+  font-family: var(--font-serif);
+}
+
+.venue-hall {
+  font-size: var(--font-size-base);
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-sm);
+}
+
+.venue-address {
+  font-size: var(--font-size-base);
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+/* 지도 보기 버튼 */
+.map-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  min-width: 200px;
+  min-height: var(--min-touch-target);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  text-decoration: none;
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  box-shadow: 0 2px 8px rgba(184, 149, 106, 0.3);
+}
+
+.map-link:hover {
+  background-color: var(--color-accent-dark);
+}
+
+.map-link:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.map-link:active {
+  transform: scale(0.98);
+}
+
+.map-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+/* ===================================
+   푸터
+   =================================== */
+.footer {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  padding: var(--spacing-2xl) var(--spacing-md);
+  text-align: center;
+}
+
+.footer-content {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+}
+
+.footer-message {
+  font-size: var(--font-size-base);
+  font-family: var(--font-serif);
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--spacing-lg);
+}
+
+.footer-copyright {
+  font-size: var(--font-size-small);
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: var(--spacing-md);
+}
+
+/* ===================================
+   접근성: 포커스 스타일
+   =================================== */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* 키보드 네비게이션 강조 */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ===================================
+   접근성: 스크린리더 전용 텍스트
+   =================================== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ===================================
+   반응형: 태블릿 이상 (768px+)
+   =================================== */
+@media (min-width: 768px) {
+  .section {
+    padding: var(--spacing-2xl) var(--spacing-xl);
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    flex-direction: row;
+    gap: var(--spacing-md);
+  }
+
+  .ampersand {
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  .hero-date {
+    font-size: var(--font-size-h2);
+  }
+
+  .hero-message {
+    font-size: 1.125rem;
+  }
+
+  .ceremony-info {
+    max-width: 500px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .date-text {
+    font-size: 1.75rem;
+  }
+
+  .time-text {
+    font-size: var(--font-size-h2);
+  }
+
+  .venue-name {
+    font-size: 1.75rem;
+  }
+
+  /* 신랑/신부 소개 - 태블릿 이상 */
+  .couple-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--spacing-2xl);
+    max-width: 600px;
+  }
+
+  .couple-photo-wrapper {
+    width: 180px;
+    height: 180px;
+  }
+
+  .couple-message {
+    max-width: 500px;
+  }
+
+  .couple-message p {
+    font-size: 1.0625rem;
+  }
+
+  /* 사진 갤러리 - 태블릿 이상 */
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    max-width: 600px;
+  }
+
+  /* 교통 안내 - 태블릿 이상 */
+  .transport-container {
+    flex-direction: row;
+    max-width: 700px;
+  }
+
+  /* 축의금 계좌 - 태블릿 이상 */
+  .account-container {
+    flex-direction: row;
+    max-width: 700px;
+  }
+
+  .account-card {
+    flex: 1;
+  }
+}
+
+/* ===================================
+   반응형: 데스크톱 (1024px+)
+   =================================== */
+@media (min-width: 1024px) {
+  .ceremony-info {
+    max-width: 600px;
+  }
+
+  .map-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(184, 149, 106, 0.4);
+  }
+}
+
+/* ===================================
+   프린트 스타일 (선택사항)
+   =================================== */
+@media print {
+  .map-link {
+    display: none;
+  }
+
+  .section {
+    min-height: auto;
+    page-break-inside: avoid;
+  }
+}
+
+/* ===================================
+   다크 모드 대응 (선택사항)
+   =================================== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-white: #1A1A1A;
+    --color-bg: #121212;
+    --color-bg-alt: #1E1E1E;
+    --color-text: #E0E0E0;
+    --color-text-light: #A0A0A0;
+    --color-border: #333333;
+  }
+
+  .ceremony-date,
+  .ceremony-venue {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .map-link {
+    box-shadow: 0 2px 8px rgba(184, 149, 106, 0.5);
+  }
+}
+
+/* ===================================
+   애니메이션 최소화 선호 대응
+   =================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
