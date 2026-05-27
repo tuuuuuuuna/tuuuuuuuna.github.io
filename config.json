@@ -1,0 +1,98 @@
+{
+  "wedding": {
+    "date": "2027-01-17",
+    "dateDisplay": "2027년 1월 17일 일요일",
+    "time": "12:30",
+    "timeDisplay": "오후 12시 30분",
+    "venue": {
+      "name": "엘블레스",
+      "hall": "다이아몬드홀",
+      "address": "서울특별시 서초구 강남대로 221 (양재동)",
+      "building": "엘타워",
+      "mapUrl": "https://kko.to/ArupEu-N-X"
+    }
+  },
+  "groom": {
+    "name": "홍길동",
+    "nameEn": "신랑",
+    "parents": {
+      "father": "홍아무개",
+      "mother": "김아무개"
+    },
+    "accounts": [
+      {
+        "owner": "신랑 홍길동",
+        "bank": "신한은행",
+        "number": "110-123-456789",
+        "numberRaw": "110123456789"
+      },
+      {
+        "owner": "신랑 부 홍아무개",
+        "bank": "국민은행",
+        "number": "123-456-789012",
+        "numberRaw": "123456789012"
+      },
+      {
+        "owner": "신랑 모 김아무개",
+        "bank": "우리은행",
+        "number": "1002-123-456789",
+        "numberRaw": "1002123456789"
+      }
+    ]
+  },
+  "bride": {
+    "name": "김영희",
+    "nameEn": "신부",
+    "parents": {
+      "father": "김아무개",
+      "mother": "이아무개"
+    },
+    "accounts": [
+      {
+        "owner": "신부 김영희",
+        "bank": "카카오뱅크",
+        "number": "3333-01-1234567",
+        "numberRaw": "3333011234567"
+      },
+      {
+        "owner": "신부 부 김아무개",
+        "bank": "신한은행",
+        "number": "110-987-654321",
+        "numberRaw": "110987654321"
+      },
+      {
+        "owner": "신부 모 이아무개",
+        "bank": "하나은행",
+        "number": "123-456789-01234",
+        "numberRaw": "12345678901234"
+      }
+    ]
+  },
+  "transport": {
+    "subway": {
+      "line": "신분당선/3호선 양재역",
+      "exit": "8번 출구",
+      "walkTime": "도보 3분"
+    },
+    "bus": {
+      "mainLine": "140, 402, 470, 541",
+      "branchLine": "4432, 4419",
+      "station": "양재역 정류장 하차"
+    },
+    "car": {
+      "parking": "엘타워 지하주차장 이용 가능",
+      "detail": "예식 하객 무료 주차"
+    }
+  },
+  "meta": {
+    "title": "신랑 & 신부 결혼식에 초대합니다",
+    "description": "2027년 1월 17일 오후 12시 30분 | 엘블레스",
+    "ogImage": "https://tuuuuuuuna.github.io/images/og-image.jpg",
+    "ogUrl": "https://tuuuuuuuna.github.io"
+  },
+  "messages": {
+    "hero": "저희 두 사람이 사랑으로 하나 되는\n소중한 자리에 여러분을 초대합니다",
+    "greeting": "평생을 함께 걸어갈 반려자를 만나\n인생의 새로운 시작을 하려 합니다.\n\n저희 두 사람이 사랑과 믿음으로\n행복한 가정을 이루어 갈 수 있도록\n앞날을 축복해 주시면 감사하겠습니다.",
+    "footer": "소중한 분들과 함께하는\n저희의 시작을 축복해 주셔서 감사합니다"
+  }
+}
