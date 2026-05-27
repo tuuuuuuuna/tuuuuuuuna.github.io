@@ -421,7 +421,7 @@ main {
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* 라이트박스 컨트롤 */
+/* 라이트박스 컸트롤 */
 .lightbox-close {
   position: absolute;
   top: var(--spacing-md);
