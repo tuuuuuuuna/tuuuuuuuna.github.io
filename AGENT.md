@@ -40,11 +40,97 @@
 
 **모든 수정 및 개발은 새로운 브랜치를 만들어서 진행합니다.**
 
-- main 브랜치에서 직접 작업하지 않습니다
-- 새로운 기능, 버그 수정, 리팩토링 등 모든 작업은 별도의 브랜치에서 진행합니다
-- 브랜치 이름은 작업 내용을 명확하게 표현해야 합니다 (예: `feature/gallery-lightbox`, `fix/mobile-layout`, `refactor/css-cleanup`)
-- 작업 완료 후 main 브랜치로 병합합니다
-- 병합 후에는 작업이 완료된 브랜치를 정리할 수 있습니다
+### 작업 시작 전 준비
+
+1. **항상 리모트 main 브랜치에서 시작합니다**
+   ```bash
+   git checkout main
+   git pull origin main
+   ```
+
+2. **새로운 작업 브랜치를 생성합니다**
+   ```bash
+   git checkout -b <branch-type>/<branch-name>
+   ```
+
+### 브랜치 네이밍 규칙
+
+브랜치 이름은 작업 유형과 내용을 명확하게 표현해야 합니다:
+
+- `feature/기능명` - 새로운 기능 추가
+- `fix/버그명` - 버그 수정
+- `refactor/대상` - 코드 리팩토링
+- `docs/문서명` - 문서 작업
+- `test/테스트명` - 테스트 추가/수정
+- `style/대상` - 스타일링 작업
+
+예시: `feature/gallery-lightbox`, `fix/mobile-layout`, `docs/add-git-workflow`
+
+### 커밋 메시지 규칙
+
+**모든 커밋 메시지는 다음 prefix를 사용합니다:**
+
+- `feat:` - 새로운 기능 추가
+- `fix:` - 버그 수정
+- `refactor:` - 코드 리팩토링
+- `docs:` - 문서 수정
+- `test:` - 테스트 추가/수정
+- `style:` - 코드 스타일 변경 (포맷팅, 세미콜론 등)
+- `chore:` - 빌드 프로세스나 도구 설정 변경
+
+예시:
+```
+feat: 사진 갤러리 라이트박스 기능 추가
+fix: 모바일 레이아웃 깨짐 현상 해결
+docs: Git 워크플로우 정책 추가
+```
+
+### Pull Request 워크플로우
+
+1. **작업 완료 후 브랜치 push**
+   ```bash
+   git push origin <branch-name>
+   ```
+
+2. **Pull Request 생성**
+   - PR 제목: 커밋 메시지 규칙과 동일하게 prefix 사용
+   - PR 설명: 변경 사항과 목적을 명확하게 작성
+
+3. **역할별 검토 프로세스**
+
+   **Scrum Master 역할:**
+   - PR 내용을 검토하고 작업이 요구사항에 부합하는지 확인
+   - 승인 또는 수정 요청
+   
+   **Reviewer 역할:**
+   - 코드 리뷰 수행
+   - 추가 작업이 필요한 경우 GitHub 이슈로 등록
+   - 이슈에는 구체적인 작업 내용과 우선순위 포함
+   
+   **Tester 역할:**
+   - 해결 완료된 이슈를 확인
+   - 실제 테스트 수행 (UI 테스트, 기능 테스트 등)
+   - 테스트 결과를 이슈 댓글로 작성
+   - 통과 시: "✅ 테스트 통과 - [테스트 내용]"
+   - 실패 시: "❌ 테스트 실패 - [실패 원인 및 재현 방법]"
+
+4. **승인 후 병합**
+   - Scrum Master의 승인 후 main 브랜치로 병합
+   - 병합 완료된 브랜치는 삭제
+
+### 작업 흐름 요약
+
+```
+1. git pull origin main (최신 상태 동기화)
+2. git checkout -b feature/new-feature (브랜치 생성)
+3. 작업 수행 및 커밋 (feat: 커밋 메시지)
+4. git push origin feature/new-feature (브랜치 push)
+5. PR 생성 및 Scrum Master/Reviewer에게 리뷰 요청
+6. Reviewer가 필요시 이슈 생성
+7. Tester가 테스트 수행 및 결과 댑글 작성
+8. 승인 후 main으로 병합
+9. 브랜치 삭제
+```
 
 ## 개인정보 보호
 
