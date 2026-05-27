@@ -1,7 +1,8 @@
-# macOS
+# OS
 .DS_Store
 .AppleDouble
 .LSOverride
+Thumbs.db
 
 # Node
 node_modules/
@@ -26,3 +27,9 @@ build/
 
 # OMC (oh-my-claudecode) 내부 파일
 .omc/
+
+# Temporary
+*.tmp
+
+# Config override (optional)
+config.local.json
